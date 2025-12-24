@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Nossa História 💕</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Historia Gabriel E Lanna 💑</h1>
+    <p>Esse singelo gesto é para representar nossa historia até aqui. Tivemos lindos momentos que eu decidi eternizar aqui nessa pagina Web. De começo ja irei inserir os momentos mais importantes em ordem cronologica.
+        E mais para frente poderemos inserir outros momentos importantes da nossa historia.
+    </p>
+
+    <p class="contador-container">
+        Juntos há
+        <strong>
+            <span id="contador" data-dias="{{ dias_juntos }}">0</span>
+        </strong>
+        dias
+        <span class="coracao">❤️</span>
+    </p>
+
+    <a class="btn" href="{{ url_for('adicionar') }}">Adicionar momento ✍️</a>
+</header>
+
+<br>
+
+<div class="center">
+    <video controls>
+    <source src="static\assets\WhatsApp Video 2025-12-24 at 16.43.13.mp4" type="video/mp4">
+    </video>
+    <span class="heart h1">❤️</span>
+    <span class="heart h2">💖</span>
+    <span class="heart h3">💗</span>
+    <span class="heart h4">💕</span>
+</div>
+
+<br>
+
+<div class="center">
+    <video controls>
+    <source src="static\assets\WhatsApp Video 2025-12-24 at 00.15.13.mp4" type="video/mp4">
+    </video>
+    <span class="heart h1">❤️</span>
+    <span class="heart h2">💖</span>
+    <span class="heart h3">💗</span>
+    <span class="heart h4">💕</span>
+</div>
+
+<section class="timeline">
+    {% for e in eventos %}
+    <div class="evento">
+        <span class="data">{{ e[1] }}</span>
+        <h2>{{ e[2] }}</h2>
+
+        {% if e[4] %}
+        <img src="{{ e[4] }}" class="foto-evento">
+        {% endif %}
+
+        <p>{{ e[3] }}</p>
+    </div>
+    {% endfor %}
+</section>
+
+<footer>
+    <p>Feito com amor ❤️</p>
+</footer>
+
+<script>
+    const contador = document.getElementById("contador");
+    const diasFinais = parseInt(contador.dataset.dias);
+
+    let atual = 0;
+    const duracao = 1500;
+    const incremento = Math.ceil(diasFinais / (duracao / 16));
+
+    function animar() {
+        atual += incremento;
+        if (atual >= diasFinais) {
+            contador.textContent = diasFinais;
+        } else {
+            contador.textContent = atual;
+            requestAnimationFrame(animar);
+        }
+    }
+
+    animar();
+</script>
+
+</body>
+</html>
+
+<style>
+.video-container {
+  position: relative;
+  padding: 20px;
+}
+
+video {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Corações */
+.heart {
+  position: absolute;
+  font-size: 28px;
+  animation: float 3s infinite ease-in-out;
+  opacity: 0.9;
+}
+
+/* Posições */
+.h1 { top: -10px; left: -10px; animation-delay: 0s; }
+.h2 { top: -10px; right: -10px; animation-delay: 0.5s; }
+.h3 { bottom: -10px; left: -10px; animation-delay: 1s; }
+.h4 { bottom: -10px; right: -10px; animation-delay: 1.5s; }
+
+/* Animação */
+@keyframes float {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.2); }
+  100% { transform: translateY(0) scale(1); }
+}
+</style>

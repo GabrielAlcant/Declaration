@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #e0dee4;
+}
+
+header {
+    background: #ff6f91;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: white;
+    color: #ff6f91;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.contador-container {
+    font-size: 1.3em;
+}
+
+#contador {
+    font-size: 2em;
+}
+
+.coracao {
+    font-size: 1.5em;
+    animation: pulsar 1s infinite;
+}
+
+@keyframes pulsar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.evento {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 6px solid #ff6f91;
+}
+
+.data {
+    color: #ff6f91;
+    font-weight: bold;
+}
+
+.foto-evento {
+    width: 100%;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    margin-top: 5px;
+    padding: 10px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background: #ff6f91;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+.center{
+    text-align: center;
+}

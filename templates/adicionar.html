@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Momento ✍️</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Novo Momento ❤️</h1>
+</header>
+
+<section class="form-container">
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Data</label>
+        <input type="date" name="data" required>
+
+        <label>Título</label>
+        <input type="text" name="titulo" required>
+
+        <label>Descrição</label>
+        <textarea name="descricao" required></textarea>
+
+        <label>Foto 📸</label>
+        <input type="file" name="foto" accept="image/*">
+
+        <button type="submit">Salvar 💕</button>
+    </form>
+</section>
+
+<footer>
+    <a href="{{ url_for('index') }}">⬅ Voltar</a>
+</footer>
+
+</body>
+</html>
